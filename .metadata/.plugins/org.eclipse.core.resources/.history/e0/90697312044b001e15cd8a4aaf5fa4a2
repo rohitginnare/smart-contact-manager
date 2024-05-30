@@ -1,0 +1,8 @@
+package com.contact.service;
+
+import java.util.List;
+
+public interface ContactService implements ContactServiceImpl {
+	
+	public List<Contact> getContactsOfUser(Long UserId);
+}

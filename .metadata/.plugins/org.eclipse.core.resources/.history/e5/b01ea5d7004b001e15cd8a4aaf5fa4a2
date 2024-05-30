@@ -1,0 +1,26 @@
+package com.user.userservice.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.user.userservice.entity.User;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+	List<User> users = List.of(
+			new User(101L, "Rohit A", "9877654321"),  
+			new User(102L, "Rohit B", "9877654322"),  
+			new User(103L, "Rohit C", "9877654323"),  
+			new User(104L, "Rohit D", "9877654324")  
+			);
+	
+	@Override
+	public User getUser(Long id) {
+		// TODO Auto-generated method stub
+		return (User) users.stream().filter(user -> user.getId().equals(id).findAny().orElse(null));
+	}
+	
+	
+}

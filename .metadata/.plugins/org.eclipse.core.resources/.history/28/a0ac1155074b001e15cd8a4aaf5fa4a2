@@ -1,0 +1,22 @@
+package com.contact.service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.contact.entity.Contact;
+
+public class ContactServiceImpl implements ContactService {
+
+	@Override
+	public List<Contact> getContactsOfUser(Long userId) {
+		//Fake List of contacts
+		List<Contact> list = List.of(
+				new Contact(1L, "MyContact1", "abc@xyz1", 101L),
+				new Contact(2L, "MyContact2", "abc@xyz2", 102L),
+				new Contact(3L, "MyContact3", "abc@xyz3", 103L),
+				new Contact(4L, "MyContact4", "abc@xyz4", 104L)
+				);
+		return list.stream().filter(contact->contact.getUserId().equals(userId)).collect(Collectors.toList());
+	}
+
+}

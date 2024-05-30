@@ -1,0 +1,16 @@
+package com.contact.service;
+
+import java.util.List;
+
+import com.contact.entity.Contact;
+
+public class ContactServiceImpl implements ContactService {
+
+	@Override
+	public List<Contact> getContactsOfUser(Long userId) {
+		//Fake List of contacts
+		List<Contact> list = List.of(new Contact(201L, "MyContact", "abc@xyz1", 101L))
+		return list.stream().filter(contact->contact.);
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.user.userservice.user;
+
+import com.user.userservice.entity.User;
+
+public interface UserService {
+
+	public User getUser(Long id);
+	
+}
